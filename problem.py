@@ -51,13 +51,3 @@ class Problem:
                 num = num * self.size[j]
             node_id = node_id + num*node[i]
         return node_id
-
-    # same as get_successors_with_cost except it treats all goals as one
-    # def get_successors_with_cost_virtual_goal(self, node):
-        # successors = []
-        # if backward ==1:
-            # if node in self.goals:
-                # for i in self.goals:
-                    # successors = successors.append(get_successors_with_cost(i))
-        # else:
-            # successors = get_successors_with_cost(node)

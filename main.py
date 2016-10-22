@@ -4,7 +4,7 @@ from planner import Planner
 from dijkstra import Dijstra
 
 # Parse variables
-filename = 'problem_1.txt'
+filename = 'problem_2.txt'
 parser = Parser(filename)
 
 # Define Problem
@@ -23,12 +23,11 @@ for goal in goals:
 prob2d = Problem(size[0:2], start[0:2], goals2d, cost)
 dij = Dijstra(prob2d)
 heuristic = dij.get_cost()
-for cs in heuristic:
-    print cs
-
+# for cs in heuristic:
+    # print cs
 # # run AStar
-# planner = Planner(prob)
-# path = planner.get_path()
+planner = Planner(prob, heuristic)
+path = planner.get_path()
 
-# for n in path[0]:
-    # print n
+for n in path[0]:
+    print n
