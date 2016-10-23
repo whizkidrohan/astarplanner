@@ -4,12 +4,13 @@ class Planner:
 
     # heuristic = an array with size of space
     # problem = object of problem class
-    def __init__(self, problem, heuristic):
+    def __init__(self, problem, heuristic, weight=1):
         self.prob = problem
         self.heuristic = heuristic
+        self.w = weight
 
     def get_path(self):
-        w=1
+        w = self.w
         start_node = self.prob.start
         plan = []
         cost = -1
@@ -54,6 +55,7 @@ class Planner:
             parent = closed_list[self.prob.get_node_id(parent[1])]
             cost = parent[2]
         plan = [current_state[0:2]] + plan
+        print "Closed List Length = " + str(len(closed_list))
         return plan
 
     def get_heuristic(self, node):
