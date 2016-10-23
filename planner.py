@@ -18,7 +18,7 @@ class Planner:
         open_list_f = {}
         # closed_list = [node] -> [action, parent, cost]
         closed_list = {}
-        cost = self.prob.cost[start_node[0]][start_node[1]]
+        cost = self.prob.cost[start_node[0]][start_node[1]]*0
         f = cost+ w*self.get_heuristic(start_node)
         open_list.put([f, cost, start_node, -1, -1])
         open_list_f[self.prob.get_node_id(start_node)]=f;
